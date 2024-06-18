@@ -147,7 +147,7 @@ metrics_para = {
 }
 
 if __name__ == '__main__':
-    '''
+
 
 # Full path to the Python executable inside the virtual environment
     python_executable = r'C:\Windows\System32\thesis\DNNCov\venv\Scripts\python.exe'
@@ -285,7 +285,6 @@ save_coverage_values_to_csv(all_suite_coverages, 'coverage_values.csv')
 print(f"Coverage results saved in '{coverage_dir}' directory and summarized in '{summary_file_path}'.")
 
 summary_file.close()
-'''
 coverage_csv_path = 'coverage_values.csv'
 accuracies_csv_path = 'accuracies.csv'
 
