@@ -176,7 +176,10 @@ if __name__ == '__main__':
 
 
 
-
+dataset_name = 'mnist'  # or 'cifar10' based on your requirement
+output_path = 'test_suites'  # Path to the output directory
+num_suites = 100  # Number of test suites
+tests_per_suite = 100  # Number of tests per suite
 suite_limit = 100  # Limit for the number of test suites to save failed tests
 noise_and_blur = False
 noise_level = 0.4  # Adjust to increase/decrease noise 0.4 0.8 1
@@ -186,14 +189,12 @@ blur_sigma = 1.7  # Adjust to increase/decrease blur 1.7 2 2.2
 failed_test_injection=False
 num_suites_to_modify = 100  # Number of existing test suites to modify
 num_tests_to_replace = 10  # Number of tests to replace with failed tests in each suite
+model = load_model('lenet5.h5')
 
 test_generate(dataset_name, output_path, num_suites, tests_per_suite, suite_limit, noise_and_blur, num_suites_to_modify,
               num_tests_to_replace,failed_test_injection)
-model = load_model('lenet5.h5')
-dataset_name = 'mnist'  # or 'cifar10' based on your requirement
-output_path = 'test_suites_reel10'  # Path to the output directory
-num_suites = 100  # Number of test suites
-tests_per_suite = 100  # Number of tests per suite
+
+
 
 with open(r'C:\Windows\System32\thesis\DNNCov\lenet5output\lenet5output.pickle', 'rb') as f:
   profiling_data = pickle.load(f)
